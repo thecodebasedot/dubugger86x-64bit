@@ -1,0 +1,16 @@
+#pragma once
+
+#include "command.h"
+
+bool cbDebugAlloc(int argc, char* argv[]);
+bool cbDebugFree(int argc, char* argv[]);
+bool cbDebugMemset(int argc, char* argv[]);
+bool cbDebugMemcpy(int argc, char* argv[]);
+bool cbDebugGetPageRights(int argc, char* argv[]);
+bool cbDebugSetPageRights(int argc, char* argv[]);
+bool cbInstrSavedata(int argc, char* argv[]);
+bool cbInstrMinidump(int argc, char* argv[]);
+bool cbDumpProcess(int argc, char* argv[]);
+bool cbPatchFile(int argc, char* argv[]);
+bool cbAutomod(int argc, char* argv[]);
+bool cbApplyPatchScript(int argc, char* argv[]);
