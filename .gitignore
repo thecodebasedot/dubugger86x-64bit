@@ -1,4 +1,7 @@
 build/
+build32/
+build64/
+msvc-wine/
 bin/
 *.exe
 *.dll

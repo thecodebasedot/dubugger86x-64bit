@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  x64dbg-build:
+    build: .
+    image: x64dbg-dev
+    volumes:
+      - .:/x64dbg
+      - x64dbg-msvc:/root/opt/msvc
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+volumes:
+  x64dbg-msvc:

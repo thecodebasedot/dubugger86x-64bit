@@ -66,6 +66,51 @@ dumpprocess [directory]
 3.  Run `x64\x64dbg.exe` or `x32\x32dbg.exe`.
 4.  To use the headless mode for automation, run `bin\x64\headless.exe`.
 
+## Docker Support (Reproducible Build Environment)
+
+To ensure the project can be built and run in a consistent environment (preserving it against future system updates), we provide Docker support.
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Building the Docker Image
+
+Run the following command to build the Docker image:
+
+```bash
+docker-compose build
+```
+
+### Running the Container
+
+Start the container:
+
+```bash
+docker-compose run --rm x64dbg-build
+```
+
+### Setting up the Build Environment (First Time Only)
+
+Inside the container, run the following script to download and install the MSVC compiler (via msvc-wine):
+
+```bash
+./docker-install-msvc.sh
+```
+
+_Note: This downloads components from Microsoft and requires accepting their license._
+
+### Building the Project inside Docker
+
+Once the environment is set up, you can build the project:
+
+```bash
+./docker-build.sh
+```
+
+The build artifacts will be available in `build64/` (for x64) directory on your host machine.
+
 ## Original Credits
 
 - Debugger core by [TitanEngine Community Edition](https://github.com/x64dbg/TitanEngine)
